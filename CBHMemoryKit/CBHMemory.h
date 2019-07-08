@@ -44,7 +44,7 @@ extern const NSExceptionName CBHReallocException;
  *
  * @note Memory allocated by this method is on the heap and must be freed by either `free()`, `CBHMemory_free()`, or `CBHMemory_free_f()`.
  */
-void *CBHMemory_alloc(size_t num, size_t size);
+void *CBHMemory_alloc(size_t num, size_t size) __result_use_check __alloc_size(1,2);
 
 /** Allocates a **clean** slice of new memory. The slice is `num` consecutive blocks of `size`.
  *
@@ -55,7 +55,7 @@ void *CBHMemory_alloc(size_t num, size_t size);
  *
  * @note Memory allocated by this method is on the heap and must be freed by either `free()`, `CBHMemory_free()`, or `CBHMemory_free_f()`.
  */
-void *CBHMemory_calloc(size_t num, size_t size);
+void *CBHMemory_calloc(size_t num, size_t size) __result_use_check __alloc_size(1,2);
 
 
 #pragma mark - Reallocation
@@ -73,7 +73,7 @@ void *CBHMemory_calloc(size_t num, size_t size);
  *
  * @note Memory allocated by this method is on the heap and must be freed by either `free()`, `CBHMemory_free()`, or `CBHMemory_free_f()`.
  */
-void *CBHMemory_realloc(void *ptr, size_t num, size_t size);
+void *CBHMemory_realloc(void *ptr, size_t num, size_t size) __result_use_check __alloc_size(2,3);
 
 /** Reallocates a slice of memory to a new size. The new slice is `num` consecutive blocks of `size`. If the new size is larger then the old size the additional memory is cleared.
  *
@@ -86,7 +86,7 @@ void *CBHMemory_realloc(void *ptr, size_t num, size_t size);
  *
  * @note Memory allocated by this method is on the heap and must be freed by either `free()`, `CBHMemory_free()`, or `CBHMemory_free_f()`.
  */
-void *CBHMemory_recalloc(void *ptr, size_t oldNum, size_t newNum, size_t size);
+void *CBHMemory_recalloc(void *ptr, size_t oldNum, size_t newNum, size_t size) __result_use_check __alloc_size(2,3);
 
 
 #pragma mark - Copying
@@ -104,7 +104,7 @@ void *CBHMemory_recalloc(void *ptr, size_t oldNum, size_t newNum, size_t size);
  *
  * @note Memory allocated by this method is on the heap and must be freed by either `free()`, `CBHMemory_free()`, or `CBHMemory_free_f()`.
  */
-void *CBHMemory_copy(const void *orig, size_t num, size_t size);
+void *CBHMemory_copy(const void *orig, size_t num, size_t size) __alloc_size(2,3);
 
 /** Copies memory from `orig` to `dest`.
  *
@@ -115,7 +115,7 @@ void *CBHMemory_copy(const void *orig, size_t num, size_t size);
  *
  * @return        A pointer to the start of the destination slice.
  */
-void *CBHMemory_copyTo(const void *orig, void *dest, size_t num, size_t size);
+void *CBHMemory_copyTo(const void *orig, void *dest, size_t num, size_t size) __alloc_size(3,4);
 
 
 #pragma mark - Swapping
