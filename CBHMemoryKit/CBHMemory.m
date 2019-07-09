@@ -57,7 +57,7 @@ inline void *CBHMemory_alloc(const size_t num, const size_t size)
 
 inline void *CBHMemory_calloc(const size_t num, const size_t size)
 {
-	/// Guard against empy allocation
+	/// Guard against empty allocation
 	_guardAllocPossibleReturn(num, size, NULL);
 
 	/// Allocate the memory
