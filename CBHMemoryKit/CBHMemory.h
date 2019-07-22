@@ -1,8 +1,8 @@
 //  CBHMemory.h
 //  CBHMemoryKit
 //
-//  Created by Christian Huxtable, November 2018.
-//  Copyright (c) 2018, Christian Huxtable <chris@huxtable.ca>
+//  Created by Christian Huxtable, December 2015.
+//  Copyright (c) 2015, Christian Huxtable <chris@huxtable.ca>
 //
 //  Permission to use, copy, modify, and/or distribute this software for any
 //  purpose with or without fee is hereby granted, provided that the above
